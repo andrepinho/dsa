@@ -5,6 +5,8 @@ from collections import defaultdict
 
 
 class Solution:
+    # https://neetcode.io/problems/anagram-groups
+
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         sBySortedS = defaultdict(list)
 

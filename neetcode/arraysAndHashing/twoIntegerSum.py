@@ -3,6 +3,8 @@ from typing import List
 
 
 class Solution:
+    # https://neetcode.io/problems/two-integer-sum
+
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         index_by_n = {}
 

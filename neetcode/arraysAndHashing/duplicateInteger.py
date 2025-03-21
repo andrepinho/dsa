@@ -3,6 +3,8 @@ from typing import List
 
 
 class Solution:
+    # https://neetcode.io/problems/duplicate-integer
+
     def hasDuplicate(self, nums: List[int]) -> bool:
 
         unique_nums = {}
