@@ -1,5 +1,6 @@
 from neetcode.testRunner import TestRunner
 
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -10,11 +11,12 @@ class Solution:
 
         for letter in s:
             s_count_by_letter[letter] = s_count_by_letter.get(letter, 0) + 1
-            
+
         for letter in t:
             t_count_by_letter[letter] = t_count_by_letter.get(letter, 0) + 1
 
         return s_count_by_letter == t_count_by_letter
+
 
 if __name__ == "__main__":
     test_cases = [

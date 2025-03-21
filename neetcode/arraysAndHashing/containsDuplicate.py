@@ -1,6 +1,7 @@
 from neetcode.testRunner import TestRunner
 from typing import List
 
+
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
 
@@ -12,6 +13,7 @@ class Solution:
             return False
         else:
             return True
+
 
 if __name__ == "__main__":
     test_cases = [

@@ -1,6 +1,7 @@
 from neetcode.testRunner import TestRunner
 from typing import List
 
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         index_by_n = {}
@@ -11,10 +12,11 @@ class Solution:
                 return [index_by_n[diff], i]
             index_by_n[n] = i
 
+
 test_cases = [
-    {'i': [[3,4,5,6], 7], 'o': [0,1]},
-    {'i': [[4,5,6], 10], 'o': [0,2]},
-    {'i': [[5,5], 10], 'o': [0,1]},
+    {'i': [[3, 4, 5, 6], 7], 'o': [0, 1]},
+    {'i': [[4, 5, 6], 10], 'o': [0, 2]},
+    {'i': [[5, 5], 10], 'o': [0, 1]},
 ]
 
 if __name__ == "__main__":
