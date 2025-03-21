@@ -1,3 +1,4 @@
+from neetcode.testRunner import TestRunner
 from typing import List
 
 class Solution:
@@ -16,11 +17,11 @@ test_cases = [
     {'i': [[5,5], 10], 'o': [0,1]},
 ]
 
-for case in test_cases:
-    actual_output = Solution().twoSum(nums=case['i'][0], target=case['i'][1])
-    expected_output = case['o']
+if __name__ == "__main__":
+    test_cases = [
+        {'inputs': {'nums': [3, 4, 5, 6], 'target': 7}, 'expected': [0, 1]},
+        {'inputs': {'nums': [4, 5, 6], 'target': 10}, 'expected': [0, 2]},
+        {'inputs': {'nums': [5, 5], 'target': 10}, 'expected': [0, 1]},
+    ]
 
-    if actual_output == expected_output:
-        print(f"Case {case['i']} passed.")
-    else:
-        print(f"Case {case['i']} failed. Expected {expected_output} but Got {actual_output}")
+    TestRunner.run_tests(Solution().twoSum, test_cases)

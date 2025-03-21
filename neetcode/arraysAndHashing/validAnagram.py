@@ -1,4 +1,4 @@
-from typing import List
+from neetcode.testRunner import TestRunner
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -16,16 +16,10 @@ class Solution:
 
         return s_count_by_letter == t_count_by_letter
 
-test_cases = [
-    {'i': ["racecar", "carrace"], 'o': True},
-    {'i': ["jar", "jam"], 'o': False},
-]
+if __name__ == "__main__":
+    test_cases = [
+        {'inputs': {'s': "racecar", 't': "carrace"}, 'expected': True},
+        {'inputs': {'s': "jar", 't': "jam"}, 'expected': False},
+    ]
 
-for case in test_cases:
-    actual_output = Solution().isAnagram(s=case['i'][0], t=case['i'][1])
-    expected_output = case['o']
-
-    if actual_output == expected_output:
-        print(f"Case {case['i']} passed.")
-    else:
-        print(f"Case {case['i']} failed. Expected {expected_output} but Got {actual_output}")
+    TestRunner.run_tests(Solution().isAnagram, test_cases)
