@@ -4,6 +4,7 @@ from neetcode.testRunner import TestRunner
 
 
 class Solution:
+    # https://neetcode.io/problems/string-encode-and-decode
 
     def encode(self, strs: List[str]) -> str:
         lens = ''
