@@ -1,47 +1,12 @@
-from neetcode.testRunner import TestRunner
-from typing import List
-from collections import defaultdict
+from .valid_sudoku import Solution as valid_sudoku
+from test_runner import TestRunner
 
-
-class Solution:
-    # https://neetcode.io/problems/valid-sudoku
-
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
-        sideLength = len(board)
-        boardSize = sideLength ** 2
-        validBoard = True
-
-        rows = defaultdict(set)
-        cols = defaultdict(set)
-        squares = defaultdict(set)
-
-        for i in range(boardSize):
-            rowIndex = i // sideLength
-            colIndex = i % sideLength
-            squareIndex = (rowIndex//3, colIndex//3)
-
-            value = board[rowIndex][colIndex]
-
-            if value == '.':
-                continue
-
-            seenInrow = value in rows[rowIndex]
-            seenInColumn = value in cols[colIndex]
-            seenInSquare = value in squares[(squareIndex)]
-
-            if seenInrow or seenInColumn or seenInSquare:
-                validBoard = False
-
-                break
-
-            rows[rowIndex].add(value)
-            cols[colIndex].add(value)
-            squares[squareIndex].add(value)
-
-        return validBoard
-
-
+# https://neetcode.io/problems/valid-sudoku
 if __name__ == "__main__":
+    solutions = [
+        valid_sudoku(),
+    ]
+
     test_cases = [
         {'inputs': {
             'board': [["1", "2", ".", ".", "3", ".", ".", ".", "."],
@@ -78,4 +43,10 @@ if __name__ == "__main__":
         }, 'expected': False},
     ]
 
-    TestRunner.run_tests(Solution().isValidSudoku, test_cases)
+    print('Running tests...\n')
+
+    for i, solution in enumerate(solutions):
+        print(
+            f"Testing solution {i + 1}/{len(solutions)}", '\n')
+        TestRunner.run_tests(solution.isValidSudoku, test_cases)
+        print('\n')

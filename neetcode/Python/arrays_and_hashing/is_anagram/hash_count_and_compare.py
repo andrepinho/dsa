@@ -1,9 +1,4 @@
-from neetcode.testRunner import TestRunner
-
-
 class Solution:
-    # https://neetcode.io/problems/is-anagram
-
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
@@ -18,12 +13,3 @@ class Solution:
             t_count_by_letter[letter] = t_count_by_letter.get(letter, 0) + 1
 
         return s_count_by_letter == t_count_by_letter
-
-
-if __name__ == "__main__":
-    test_cases = [
-        {'inputs': {'s': "racecar", 't': "carrace"}, 'expected': True},
-        {'inputs': {'s': "jar", 't': "jam"}, 'expected': False},
-    ]
-
-    TestRunner.run_tests(Solution().isAnagram, test_cases)

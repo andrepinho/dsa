@@ -8,7 +8,7 @@ class TestRunner:
     def run_tests(solution_func: Callable[..., T], test_cases: List[Dict[str, Any]]) -> None:
         for i, case in enumerate(test_cases):
 
-            caseName = i + 1
+            case_name = i + 1
 
             inputs = case['inputs']
             expected = case['expected']
@@ -16,7 +16,7 @@ class TestRunner:
 
             # Display test results
             if actual == expected:
-                print(f"Case {caseName} passed.")
+                print(f"Case {case_name} passed.")
             else:
                 print(
-                    f"Case {caseName} failed. Expected {expected} but Got {actual}")
+                    f"Case {case_name} failed. Expected {expected} but Got {actual}")
