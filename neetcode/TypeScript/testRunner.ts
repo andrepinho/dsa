@@ -8,6 +8,7 @@ function test<InputType, OutputType>(
   func: (i: InputType) => OutputType,
   testCases: readonly { input: InputType; output: OutputType }[]
 ): void {
+  console.log("Running solution:");
   testCases.forEach(({ input, output: expectedOutput }, i) => {
     const actualOutput = func(input);
 
